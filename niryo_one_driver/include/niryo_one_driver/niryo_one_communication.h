@@ -31,6 +31,7 @@
 #include "niryo_one_driver/communication_base.h"
 
 #include "niryo_one_driver/change_hardware_version.h"
+#include <std_msgs/String.h>
 
 class NiryoOneCommunication : public CommunicationBase {
 
@@ -91,6 +92,10 @@ class NiryoOneCommunication : public CommunicationBase {
                 uint32_t reg_address, uint32_t byte_number);
 
         void rebootMotors();
+        //Activate PLC
+        ros::NodeHandle nh;
+        ros::Publisher activate_plc = nh.advertise<std_msgs::String>("activate_plc",1000);
+
 
     private:
 
@@ -127,6 +132,8 @@ class NiryoOneCommunication : public CommunicationBase {
         bool niryo_one_comm_ok;
         bool can_comm_ok;
         bool dxl_comm_ok;
+
+
 };
 
 

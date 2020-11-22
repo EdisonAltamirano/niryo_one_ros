@@ -210,6 +210,9 @@ int NiryoOneCommunication::pingAndSetConveyor(uint8_t id, bool activate, std::st
 // stepper niryo one conveyor belt test is here
 int NiryoOneCommunication::moveConveyor(uint8_t id, bool activate, int16_t speed, int8_t direction, std::string &message)
 {
+    std_msgs::String msg;
+    msg.data = "Activate_plc";
+    activate_plc.publish(msg);
     if (can_enabled) {
         int res = canComm->conveyorOn(id, activate, speed, direction);
         if (res == CONVEYOR_CONTROL_OK){
