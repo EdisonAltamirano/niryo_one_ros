@@ -1,0 +1,6 @@
+niryo_one_ros/niryo_one_debug
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_debug/cmake.lock /home/edison/niryo_sim_ws/devel/./cmake.lock
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_debug/share/niryo_one_debug/cmake/niryo_one_debugConfig.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_debug/cmake/niryo_one_debugConfig.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_debug/share/niryo_one_debug/cmake/niryo_one_debugConfig-version.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_debug/cmake/niryo_one_debugConfig-version.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_debug/lib/pkgconfig/niryo_one_debug.pc /home/edison/niryo_sim_ws/devel/lib/pkgconfig/niryo_one_debug.pc
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_debug/lib/niryo_one_debug/dxl_debug_tools /home/edison/niryo_sim_ws/devel/lib/niryo_one_debug/dxl_debug_tools

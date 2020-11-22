@@ -1,0 +1,6 @@
+niryo_one_ros/niryo_one_python_api
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_python_api/cmake.lock /home/edison/niryo_sim_ws/devel/./cmake.lock
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_python_api/share/niryo_one_python_api/cmake/niryo_one_python_apiConfig.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_python_api/cmake/niryo_one_python_apiConfig.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_python_api/share/niryo_one_python_api/cmake/niryo_one_python_apiConfig-version.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_python_api/cmake/niryo_one_python_apiConfig-version.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_python_api/lib/pkgconfig/niryo_one_python_api.pc /home/edison/niryo_sim_ws/devel/lib/pkgconfig/niryo_one_python_api.pc
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_python_api/lib/python2.7/dist-packages/niryo_one_python_api/__init__.py /home/edison/niryo_sim_ws/devel/lib/python2.7/dist-packages/niryo_one_python_api/__init__.py

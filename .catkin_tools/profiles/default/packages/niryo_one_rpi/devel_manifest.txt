@@ -1,0 +1,6 @@
+niryo_one_ros/niryo_one_rpi
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_rpi/cmake.lock /home/edison/niryo_sim_ws/devel/./cmake.lock
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_rpi/share/niryo_one_rpi/cmake/niryo_one_rpiConfig-version.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_rpi/cmake/niryo_one_rpiConfig-version.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_rpi/share/niryo_one_rpi/cmake/niryo_one_rpiConfig.cmake /home/edison/niryo_sim_ws/devel/share/niryo_one_rpi/cmake/niryo_one_rpiConfig.cmake
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_rpi/lib/pkgconfig/niryo_one_rpi.pc /home/edison/niryo_sim_ws/devel/lib/pkgconfig/niryo_one_rpi.pc
+/home/edison/niryo_sim_ws/devel/.private/niryo_one_rpi/lib/python2.7/dist-packages/niryo_one_rpi/__init__.py /home/edison/niryo_sim_ws/devel/lib/python2.7/dist-packages/niryo_one_rpi/__init__.py
