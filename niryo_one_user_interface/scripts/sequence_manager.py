@@ -48,7 +48,7 @@ class SequenceManager:
     # !! Need to call this with rospy.on_shutdown !!
     def shutdown(self):
         self.blockly_generator.shutdown()
-
+ 
     def callback_get_sequence_list(self, req):
         read_info_only = req.info_header_only
         sequence_list = self.get_all_sequences(read_info_only=read_info_only)

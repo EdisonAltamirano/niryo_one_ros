@@ -50,6 +50,7 @@ from niryo_one_msgs.srv import GetCalibrationCam
 from niryo_one_msgs.srv import ControlConveyor, SetConveyor, UpdateConveyorId
 
 from niryo_one_commander.command_type import CommandType as MoveCommandType
+from niryo_one_python_api.niryo_modbus import NIRYOMODBUS
 
 # Tools IDs (need to match tools ids in niryo_one_tools package)
 TOOL_NONE = 0
@@ -999,7 +1000,7 @@ class NiryoOne:
                 raise NiryoOneException(result.message)
 
             return result.status, result.message
-
+ 
         def control_conveyor(self, conveyor_id, control_on, speed, direction):
             """
             Control conveyor associated to conveyor_id.
@@ -1016,8 +1017,10 @@ class NiryoOne:
             :return: status, message
             :rtype: (GoalStatus, str)
             """
-            result = self.call_service('/niryo_one/kits/control_conveyor',
+            result = self.call_service('/niryo_one/kits/control_conveyor', 
                                        ControlConveyor, [conveyor_id, control_on, speed, direction])
+            niryo = NIRYOMODBUS()
+            niryo.activate()
             if result.status != OK:
                 raise NiryoOneException(result.message)
             return result.status, result.message
@@ -1111,3 +1114,11 @@ class NiryoOne:
             """
             return [robot_state.position.x, robot_state.position.y, robot_state.position.z,
                     robot_state.rpy.roll, robot_state.rpy.pitch, robot_state.rpy.yaw]
+'''
+if __name__ == '__main__':
+    try:
+        niryo = NiryoOne()
+        niryo.control_conveyor(6,True,100,1)
+    except rospy.ROSInterruptException:
+        pass
+'''

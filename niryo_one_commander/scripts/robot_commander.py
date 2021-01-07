@@ -48,6 +48,7 @@ from niryo_one_commander.parameters_validation import ParametersValidation
 
 # State publisher
 from niryo_one_robot_state_publisher import NiryoRobotStatePublisher
+from niryo_one_python_api.niryo_modbus import NIRYOMODBUS
 
 """
 This class handles the arm and tools through a service interface 
@@ -85,7 +86,7 @@ class RobotCommander:
         self.is_active_server = rospy.Service(
             'niryo_one/commander/is_active', GetInt, self.callback_is_active)
 
-        self.learning_mode_subscriber = rospy.Subscriber(
+        self.learning_mode_subscriber = rospy.Subscriber( 
             '/niryo_one/learning_mode', Bool, self.callback_learning_mode)
         self.joystick_enabled_subscriber = rospy.Subscriber('/niryo_one/joystick_interface/is_enabled',
                                                             Bool, self.callback_joystick_enabled)
@@ -154,6 +155,8 @@ class RobotCommander:
             rospy.wait_for_service('/niryo_one/activate_learning_mode', 1)
             srv = rospy.ServiceProxy('/niryo_one/activate_learning_mode', SetInt)
             resp = srv(int(activate))
+            niryo = NIRYOMODBUS()
+            niryo.activate()
             return resp.status == 200
         except (rospy.ServiceException, rospy.ROSException), e:
             return False
@@ -250,6 +253,7 @@ class RobotCommander:
         self.learning_mode_on = activate
 
     def callback_joystick_enabled(self, msg):
+
         self.joystick_enabled = msg.data
 
     def callback_hardware_status(self, msg):
@@ -306,8 +310,11 @@ class RobotCommander:
             return
 
         # validate parameters -> set_rejected (msg : validation or commander error)
-        try:
+        try: 
             rospy.loginfo("Robot Action Server - Checking parameters Validity")
+            niryo = NIRYOMODBUS() 
+            niryo.activate()
+            rospy.loginfo("Industrial mode activated")
             self.validate_params(goal_handle.goal.goal.cmd)
         except RobotCommanderException as e:
             result = self.create_result(e.status, e.message)
@@ -322,6 +329,7 @@ class RobotCommander:
                                             "Learning mode could not be deactivated")
                 goal_handle.set_rejected(result)
                 return
+
 
         # set accepted
         self.current_goal_handle = goal_handle

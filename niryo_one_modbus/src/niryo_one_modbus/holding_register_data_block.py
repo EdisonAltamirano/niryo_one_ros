@@ -86,7 +86,7 @@ HR_CONTROL_CONVEYOR_DIRECTION = 523
 HR_CONTROL_CONVEYOR_SPEED = 524
 HR_UPDATE_CONVEYOR_ID_TO_NEW_ID = 525
 HR_STOP_CONVEYOR_WITH_ID = 526
-
+ 
 # Positive number : 0 - 32767
 # Negative number : 32768 - 65535
 def handle_negative_hr(val):

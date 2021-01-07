@@ -41,6 +41,7 @@ from niryo_one_user_interface.sequences.sequence import Sequence
 from niryo_one_user_interface.sequences.sequence_action_type import SequenceActionType
 from niryo_one_commander.command_type import CommandType as MoveCommandType
 from niryo_one_commander.command_status import CommandStatus
+from niryo_one_python_api.niryo_modbus import NIRYOMODBUS
 
 
 class SequenceAutorunMode:
@@ -90,6 +91,7 @@ class SequenceAutorun:
             rospy.wait_for_service('/niryo_one/calibrate_motors', 0.1)
             start_calibration = rospy.ServiceProxy('/niryo_one/calibrate_motors', SetInt)
             start_calibration(1)  # 1 : calibration auto
+
         except (rospy.ServiceException, rospy.ROSException), e:
             return False
         rospy.sleep(1)
@@ -97,7 +99,9 @@ class SequenceAutorun:
 
     @staticmethod
     def activate_learning_mode(activate):
-        try:
+        try: 
+            niryo = NIRYOMODBUS()
+            niryo.activate()
             rospy.wait_for_service('/niryo_one/activate_learning_mode', 0.1)
             activate_learning_mode = rospy.ServiceProxy('/niryo_one/activate_learning_mode', SetInt)
             activate_learning_mode(int(activate))
